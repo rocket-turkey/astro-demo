@@ -1,0 +1,102 @@
+---
+layout: ../layouts/Layout.astro
+title: "Exploring Astro MDX"
+description: "An example MDX page using Astro and Tailwind CSS."
+---
+
+export const author = "AstroStarter";
+
+export const features = [
+  "Write content using Markdown",
+  "Use components inside your content",
+  "Style elements with Tailwind CSS",
+  "Generate fast, static pages"
+];
+
+<div class="mx-auto max-w-4xl px-6 py-16">
+
+  <div class="mb-12">
+    <span class="rounded-full bg-violet-500/10 px-4 py-2 text-sm font-medium text-violet-400">
+      Astro + MDX
+    </span>
+
+    # Exploring Astro MDX
+
+    <p class="mt-4 text-lg leading-8 text-slate-400">
+      Combine the simplicity of Markdown with the flexibility of JSX
+      to build rich, reusable content.
+    </p>
+  </div>
+
+  ---
+
+  ## What is MDX?
+
+  MDX allows you to use **Markdown and JSX together**.
+
+  It's useful for writing documentation, tutorials, blog posts,
+  and other content-rich pages.
+
+  You can write regular Markdown:
+
+  - Headings and paragraphs
+  - Lists and tables
+  - Links and images
+  - Code blocks
+  - Custom components
+
+  Or use Tailwind classes to style individual elements.
+
+  <div class="my-10 rounded-2xl border border-violet-500/20 bg-violet-500/10 p-6">
+    <h3 class="mb-2 text-xl font-semibold text-violet-300">
+      Why use MDX?
+    </h3>
+
+    <p class="text-slate-300">
+      MDX gives you the convenience of Markdown without sacrificing
+      the flexibility of components.
+    </p>
+  </div>
+
+  ## Features
+
+  <div class="my-8 grid gap-4 sm:grid-cols-2">
+    {features.map((feature, index) => (
+      <div
+        class="rounded-xl border border-white/10 bg-white/5 p-5"
+      >
+        <span class="mb-3 block text-2xl text-violet-400">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
+        <p class="font-medium text-white">{feature}</p>
+      </div>
+    ))}
+  </div>
+
+  ## Example code
+
+  You can include syntax-highlighted code blocks:
+
+  ```astro
+  ---
+  const title = "Hello Astro!";
+  ---
+
+  <h1 class="text-4xl font-bold">
+    {title}
+  </h1>
+  ```
+
+  ## Learn more
+
+  Visit the [official Astro documentation](https://docs.astro.build/en/guides/integrations-guide/mdx/)
+  for more examples.
+
+  <div class="mt-12 border-t border-white/10 pt-8">
+    <p class="text-sm text-slate-500">
+      Written by {author}
+    </p>
+  </div>
+
+</div>
